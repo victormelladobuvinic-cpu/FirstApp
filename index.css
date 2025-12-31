@@ -106,3 +106,19 @@ cursor: pointer;
     margin: 0 auto;
     text-align: center;
 }
+
+/*checkout section*/
+
+.space {
+    padding: 45px;
+}
+.checkout-item {
+    
+    width: 600px;
+    padding: 12 45px 0 45px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0 auto;
+}
