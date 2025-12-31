@@ -1,0 +1,108 @@
+html,body{
+    font-family: "Smythe", system-ui;
+    font-size: 16px;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    color: #fff;
+    
+
+} 
+
+/*header*/
+
+.hero-img {
+    background-image: url('./images/header-burger.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 600;
+    height: 167;
+    margin: 0 auto;
+
+
+}
+
+.text-container {
+    padding: 1rem 3rem;
+}
+
+h1, h2 {
+    font-weight: 400;
+
+}
+
+h1 {
+    margin-bottom: 0;
+    font-size: 2rem;
+}
+h2 {
+    margin-top: 0.5rem;
+   font-size: 1.5rem;
+}
+
+/*menu items*/
+.black {
+ color : black;
+}
+
+.grey {
+ color : grey;
+}
+
+.menu-section {
+    margin: 0 auto;
+    width: 600;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    margin: 0 auto;
+}
+
+.item-info {
+    width: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 45px;
+    border-bottom: 1px solid #D2D2D2;
+    
+}
+.item-details {
+    display: flex;
+   justify-content: space-between;
+    align-items: start;
+}
+.item-emoji {
+    font-size: 80px;
+    
+}
+
+.item-text {
+    padding-left: 15px;
+}
+
+.add-btn {
+font-size: 24px;
+border-radius: 50%;
+border: 1px solid #DEDEDE;
+height: 50px;
+width: 50px;
+text-align: center;
+margin-top: auto;
+margin-bottom: auto;
+background: #FFF;
+cursor: pointer;
+}
+
+.add-btn:hover {
+    background: #F2F2F2;
+}
+
+.visible{ 
+    color: black;
+    margin: 0 auto;
+    text-align: center;
+}
