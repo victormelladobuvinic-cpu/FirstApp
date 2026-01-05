@@ -101,13 +101,11 @@ cursor: pointer;
     background: #F2F2F2;
 }
 
-.visible{ 
-    color: black;
-    margin: 0 auto;
-    text-align: center;
-}
+
 
 /*checkout section*/
+
+
 
 .space {
     padding: 45px;
@@ -121,4 +119,60 @@ cursor: pointer;
     font-size: 24px;
     font-weight: 400;
     margin: 0 auto;
+}
+
+
+/* boton completar orden */
+
+.complete-order-btn {
+    width: 600px;
+    height: 60px;
+    margin: 20px auto;
+    display: block;
+    background-color: #16DB99;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 400;
+    border: #c4c4c4;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.space {
+    color: #000;
+    margin: 0 auto;
+    text-align: center;
+
+    
+
+}
+
+/* Visibility classes */
+.hidden {
+    display: none !important;
+}
+
+.visible {
+    display: block !important;
+}
+
+/*inlineclass*/
+.inline {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-items: end;
+}
+
+.remove-btn {
+    border: none;
+    color: grey;
+    background: none;
+    text-align: center;
+    font-family: "Smythe", system-ui;
+    font-size: 1rem;
+    cursor: pointer;
+
+
+
 }

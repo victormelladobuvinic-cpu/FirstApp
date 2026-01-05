@@ -1,6 +1,8 @@
 
 import { menuArray} from './data.js'
+
 let orderArray = []
+
 function getMenuHtml(menu) {
 
 return menu.map(({name, ingredients, price, emoji, id}) =>{
@@ -30,30 +32,61 @@ function handleAddClick(menu) {
     document.addEventListener('click', function(e){
 
         if(e.target.id) {
-
-            document.getElementById('checkout-container').classList.add('visible')
                     
               const targetItem = menu.find(function(item) { 
                 return item.id === Number(e.target.id)
             })
             
             orderArray.push(targetItem)
+            updateCheckoutVisibility()
             renderOrder()
         } 
+
+        if(e.target.dataset.remove) {
+            const index = e.target.dataset.remove
+            removeItemFromOrder(index)
+        }
 
 
 
     })
-    
+
+
+
+
 }
+
+function updateCheckoutVisibility() {
+    const checkoutContainer = document.getElementById('checkout-container')
+    
+    if(orderArray.length > 0) {
+        checkoutContainer.classList.remove('hidden')
+        checkoutContainer.classList.add('visible')
+    } else {
+        checkoutContainer.classList.add('hidden')
+        checkoutContainer.classList.remove('visible')
+    }
+}
+
+function removeItemFromOrder(index) {
+orderArray.splice(index, 1)
+updateCheckoutVisibility()
+renderOrder()
+}
+
+
  function renderOrder() {
 
-    let orderHtml = orderArray.map(({name, price}) => {
+
+    let orderHtml = orderArray.map(({name, price}, index) => {
         return `
             
             <div class="checkout-item">
-                <div class="checkout-item-name black">${name}</div>
-                <div class="checkout-item-price black">$${price}</div>
+                <div class="inline">
+                    <div class="checkout-item-name black">${name}</div>
+                    <button class="remove-btn" data-remove="${index}" >Remove</button>
+                </div>
+                    <div class="checkout-item-price black">$${price}</div>
             </div>`
     }).join('')
 
