@@ -105,17 +105,27 @@ cursor: pointer;
 
 /*checkout section*/
 
+.checkout-section {
+    background-color: #FFF;
+    color: #000;
+    padding: 20px;
+    margin: 20px auto;
+    width: 600px;
+    
+    
+}
 
 
 .space {
     padding: 45px;
 }
 .checkout-item{
-    width: 600px;
-    padding: 12px 45px 12px 45px;
+    width: 100%;
+    padding: 12px 45px;
     font-size: 24px;
     font-weight: 400;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 .items-data, .total {
     display: flex;
@@ -124,12 +134,13 @@ cursor: pointer;
 }
 
 .total {
-     width: 600px;
+    width: 100%;
     border-top: 2px solid grey;
-    padding-top: 20px;
+    padding: 12px 45px;
     margin: 20px auto;
     color:#000;
     text-align: center;
+    box-sizing: border-box;
 }
 
 .checkout-total-price {
