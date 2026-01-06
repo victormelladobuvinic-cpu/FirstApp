@@ -110,16 +110,32 @@ cursor: pointer;
 .space {
     padding: 45px;
 }
-.checkout-item {
-    
+.checkout-item{
     width: 600px;
-    padding: 12 45px 0 45px;
-    display: flex;
-    justify-content: space-between;
+    padding: 12px 45px 12px 45px;
     font-size: 24px;
     font-weight: 400;
     margin: 0 auto;
 }
+.items-data, .total {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.total {
+     width: 600px;
+    border-top: 2px solid grey;
+    padding-top: 20px;
+    margin: 20px auto;
+    color:#000;
+    text-align: center;
+}
+
+.checkout-total-price {
+    font-size: 1.5rem;
+}
+
 
 
 /* boton completar orden */

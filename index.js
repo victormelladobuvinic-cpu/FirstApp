@@ -40,6 +40,8 @@ function handleAddClick(menu) {
             orderArray.push(targetItem)
             updateCheckoutVisibility()
             renderOrder()
+            renderTotal()
+            
         } 
 
         if(e.target.dataset.remove) {
@@ -68,12 +70,6 @@ function updateCheckoutVisibility() {
     }
 }
 
-function removeItemFromOrder(index) {
-orderArray.splice(index, 1)
-updateCheckoutVisibility()
-renderOrder()
-}
-
 
  function renderOrder() {
 
@@ -82,14 +78,31 @@ renderOrder()
         return `
             
             <div class="checkout-item">
-                <div class="inline">
-                    <div class="checkout-item-name black">${name}</div>
-                    <button class="remove-btn" data-remove="${index}" >Remove</button>
+                <div class="items-data">
+                    <div class="inline">
+                        <div class="checkout-item-name black">${name}</div>
+                        <button class="remove-btn" data-remove="${index}" >Remove</button>
+                    </div>
+                        <div class="checkout-item-price black">$${price}</div>
                 </div>
-                    <div class="checkout-item-price black">$${price}</div>
+                 
             </div>`
     }).join('')
 
     document.getElementById('checkout-section').innerHTML = orderHtml
  }
  handleAddClick(menuArray)
+
+ function removeItemFromOrder(index) {
+orderArray.splice(index, 1)
+updateCheckoutVisibility()
+renderOrder()
+}
+
+
+
+function renderTotal() {
+    const prices = orderArray.map(item => item.price)
+    
+    document.getElementById('checkout-total-price').innerText = `$${prices.reduce((a,b) => a + b, 0)}`
+}
