@@ -4,7 +4,7 @@ html,body{
     margin: 0;
     border: 0;
     box-sizing: border-box;
-    color: #fff;
+    color:#000
     
 
 } 
@@ -18,6 +18,7 @@ html,body{
     width: 600;
     height: 167;
     margin: 0 auto;
+    color: #fff;
 
 
 }
@@ -151,9 +152,8 @@ cursor: pointer;
 
 /* boton completar orden */
 
-.complete-order-btn {
-    width: 600px;
-    height: 60px;
+.complete-order-btn, .form-btn {
+    
     margin: 20px auto;
     display: block;
     background-color: #16DB99;
@@ -163,6 +163,17 @@ cursor: pointer;
     border: #c4c4c4;
     border-radius: 8px;
     cursor: pointer;
+}
+
+.form-btn {
+    width: 100%;
+    padding: 16px 8px
+}
+
+.complete-order-btn {
+
+    width: 600px;
+    height: 60px;
 }
 
 .space {
@@ -202,4 +213,44 @@ cursor: pointer;
 
 
 
+}
+
+/*form*/
+
+.login-form {
+    color: #000;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 23px;
+    margin: 40px auto;
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #FFF;
+    border: 1px solid #757575;
+    box-shadow: 5px 5px 255px 0px #00000080;
+    padding: 30px;
+    border-radius: 5px;
+
+     
+
+}
+
+.title-form {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #c4c4c4;
+    border-radius: 4px;
 }

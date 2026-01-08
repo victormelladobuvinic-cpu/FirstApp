@@ -31,24 +31,29 @@ function handleAddClick(menu) {
 
     document.addEventListener('click', function(e){
 
-        if(e.target.id) {
-                    
-              const targetItem = menu.find(function(item) { 
+        if (e.target.classList && e.target.classList.contains('add-btn')) {
+            const targetItem = menu.find(function(item) { 
                 return item.id === Number(e.target.id)
             })
-            
-            orderArray.push(targetItem)
-            updateCheckoutVisibility()
-            renderOrder()
-            renderTotal()
-            
-        } 
+
+            if (targetItem) {
+                orderArray.push(targetItem)
+                updateCheckoutVisibility()
+                renderOrder()
+                renderTotal()
+            }
+
+        }
 
         if(e.target.dataset.remove) {
             const index = e.target.dataset.remove
             removeItemFromOrder(index)
         }
-
+        
+        if (e.target.id === "complete-order-btn") {
+            const loginForm = document.getElementById('login-form')
+            loginForm.classList.remove('hidden')
+        }
 
 
     })
@@ -60,15 +65,13 @@ function handleAddClick(menu) {
 
 function updateCheckoutVisibility() {
     const checkoutContainer = document.getElementById('checkout-container')
+    const hasItems = orderArray.length > 0
+
+
+    checkoutContainer.classList.toggle('visible', hasItems)
+    checkoutContainer.classList.toggle('hidden', !hasItems)
     
-    if(orderArray.length > 0) {
-        checkoutContainer.classList.remove('hidden')
-        checkoutContainer.classList.add('visible')
-    } else {
-        checkoutContainer.classList.add('hidden')
-        checkoutContainer.classList.remove('visible')
-    }
-}
+  }
 
 
  function renderOrder() {

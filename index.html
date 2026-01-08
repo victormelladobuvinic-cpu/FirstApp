@@ -30,10 +30,36 @@
                         <div id="checkout-total-price" class="checkout-total-price">$0</div>
                     </div>
                     <button id="complete-order-btn" class="complete-order-btn">Complete order</button>
-                    
                 </div> 
             </section>
-        </main>
+            <form id="login-form" class="login-form hidden">
+                <h2 class="title-form">Enter card details</h2>
+                <input 
+                type="text" 
+                id="username" 
+                ame="username" 
+                placeholder="Enter your name"
+                class="input-field"
+                required>
+                <input 
+                type="text" 
+                id="card-num" 
+                name="card-num"
+                placeholder="Enter card number"
+                class="input-field"
+                required>
+                <input type="text" 
+                id="cvv-num" 
+                name="cvv-num"
+                placeholder="Enter CVV"
+                class="input-field"
+                required>
+                <button class="form-btn" type="submit">Pay</button>
+            </form>
+
+            
+
+        
 
 	<script src="index.js" type="module"></script>
     </body>
