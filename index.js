@@ -41,6 +41,7 @@ function handleAddClick(menu) {
                 updateCheckoutVisibility()
                 renderOrder()
                 renderTotal()
+
             }
 
         }
@@ -55,7 +56,15 @@ function handleAddClick(menu) {
             loginForm.classList.remove('hidden')
         }
 
+        if (e.target.id === "pay-btn") {
+            e.preventDefault()
+            payOrder()
+            orderArray = []
+            updateCheckoutVisibility()
+            document.getElementById('login-form').classList.add('hidden')
 
+             }
+        
     })
 
 
@@ -84,7 +93,7 @@ function updateCheckoutVisibility() {
                 <div class="items-data">
                     <div class="inline">
                         <div class="checkout-item-name black">${name}</div>
-                        <button class="remove-btn" data-remove="${index}" >Remove</button>
+                        <button id="remove-btn" class="remove-btn" data-remove="${index}">Remove</button>
                     </div>
                         <div class="checkout-item-price black">$${price}</div>
                 </div>
@@ -108,4 +117,22 @@ function renderTotal() {
     const prices = orderArray.map(item => item.price)
     
     document.getElementById('checkout-total-price').innerText = `$${prices.reduce((a,b) => a + b, 0)}`
+}
+
+function payOrder() {
+    const userName = document.getElementById("username").value
+    const payMessageContainer = document.getElementById("pay-message")
+    
+    // Crear elemento de forma segura
+    const messageDiv = document.createElement("div")
+    messageDiv.className = "pay-complete-message"
+    
+    const messageH2 = document.createElement("h2")
+    messageH2.className = "thank-you-message"
+    messageH2.textContent = `Thank you, ${userName}! Your order is on its way!`
+    
+    messageDiv.appendChild(messageH2)
+    payMessageContainer.innerHTML = ""
+    payMessageContainer.appendChild(messageDiv)
+
 }

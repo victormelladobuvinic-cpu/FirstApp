@@ -254,3 +254,12 @@ cursor: pointer;
     border: 1px solid #c4c4c4;
     border-radius: 4px;
 }
+
+/*pay message*/
+
+.thank-you-message {
+    color:#000;
+    text-align: center;
+    color:#169999;
+    margin: 0 auto;
+}
